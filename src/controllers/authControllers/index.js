@@ -3,6 +3,15 @@ import passport from 'passport'
 const registerController = passport.authenticate('registro', {
     successRedirect: '/api/v1/auth/successRegister',
     failureRedirect: '/api/v1/auth/failRegister'
+    // (err)=>{
+    //     try {
+    //         if(!err)return {successRedirect: '/api/v1/auth/successRegister'}
+    //         throw {failureRedirect: '/api/v1/auth/failRegister'}
+    //     } catch (error) {
+    //         console.log("desde autcontroller",error);
+    //         return error
+    //     }
+    // }
 })
 
 const loginController = passport.authenticate('login', {
@@ -19,11 +28,13 @@ function failRegisterController(req,res){
 }
 
 function successLoginController(req,res){
-    res.redirect('/api/v1/admin/home')
+    // res.redirect('/api/v1/admin/home')
+    res.status(200).send({success: "Iniciando session"})
 }
 
 function failLoginController(req,res){
-    res.render('failLogin')
+    // res.render('failLogin')
+    res.status(400).send({msg: "El email no está registrado"})
 }
 
 function getLoginController(req,res){

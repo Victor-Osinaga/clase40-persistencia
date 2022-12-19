@@ -33,16 +33,19 @@ class ServicesUser {
         let userNoDto = await this.userRepository.repoGetUserByUsername(username)
         try {
             if(userNoDto == null){
-                throw new Error(`error autenticacion con: ${username}`)
+                // throw new Error(`error autenticacion con: ${username}`)
+                throw {msg: `error autenticacion con:`, data: `${username}`}
             }
             if(await bcryptjs.compare(password, userNoDto.getPassword())){
                 const userDto = userNoDto.convertToDTO()
                 return userDto
             }else{
-                throw new Error('error autenticacion con: password')
+                // throw new Error('error autenticacion con: password')
+                throw {msg: `error autenticacion con:`, data: `password`}
             }
         } catch (error) {
-            console.log(`inf err: ${error}`);
+            // console.log(`inf err: ${error}`);
+            throw error
         }
         
 

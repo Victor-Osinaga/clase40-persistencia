@@ -1,5 +1,5 @@
 import express from 'express'
-import {v1RouterProductos, v1RouterCarritos, v1RouterAuth, v1RouterAdminHome, v1RouterUserHome} from './src/v1/index.js';
+import {v1RouterProductos, v1RouterCarritos, v1RouterAuth, v1RouterAdminHome, v1RouterUserHome, v1RouterRandomsNumbers} from './src/v1/index.js';
 import {sessionHandler} from './src/middlewares/session.js'
 import {passportMiddleware, passportSessionHandler} from './src/middlewares/passport.js'
 
@@ -29,6 +29,9 @@ app.use('/api/v1/admin', v1RouterAdminHome)
 
 // home USER
 app.use('/api/v1/user', v1RouterUserHome)
+
+// randoms numbers
+app.use('/api/v1/randoms', v1RouterRandomsNumbers)
 
 // auth
 // app.use('/api/v1/home', v1Router)

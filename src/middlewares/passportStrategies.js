@@ -33,6 +33,7 @@ export const loginLocal = new Strategy(
             const usuario = await userServices.autenticarUsuario(username, password)
             done(null, usuario)
         } catch (error) {
+            console.log("err desde passport strategies", error);
             done(null, false, error)
         }
     }
