@@ -18,7 +18,8 @@ class ServicesUser {
 
         const userNoDto = new User({
             id: randomUUID(),
-            ...data
+            ...data,
+            admin: false
         })
 
         const userDto = userNoDto.convertToDTO()

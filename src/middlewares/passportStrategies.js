@@ -3,7 +3,7 @@ import { Strategy } from 'passport-local'
 // import {autenticar} from '../api/authApi.js'
 // import { usersDAO } from '../DAO/usersDAO.js'
 
-import { userServices } from '../services/factoryUser.js'
+import { userServices } from '../services/usersServices/factoryUser.js'
 
 // import { ensureUniqueName } from '../api/user.js'
 // import { crearUsuario } from '../models/user.js'

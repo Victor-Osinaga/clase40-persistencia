@@ -41,7 +41,8 @@ app.use('/api/v1/randoms', v1RouterRandomsNumbers)
 // });
 
 app.all('*', (req, res) => {
-    res.json({ error: `404 Not Found`, desc: `No encontamos la página que buscas.` });
+    // res.json({ error: `404 Not Found`, desc: `No encontamos la página que buscas.` });
+    res.redirect('/api/v1/auth/login');
 });
 
 export {app}

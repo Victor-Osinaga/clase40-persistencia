@@ -2,7 +2,7 @@ import passport from 'passport';
 
 import * as strategies from './passportStrategies.js'
 // import {usersDAO} from '../DAO/usersDAO.js';
-import { userServices } from '../services/factoryUser.js';
+import { userServices } from '../services/usersServices/factoryUser.js';
 
 passport.use('registro', strategies.registroLocal)
 passport.use('login', strategies.loginLocal)
@@ -23,7 +23,7 @@ passport.deserializeUser( async (id, done) => {
         }
         done(null, user)
     } catch (error) {
-        // console.log("desde passport", error);
+        console.log("desde passport", error);
         done(error)
     }
 })

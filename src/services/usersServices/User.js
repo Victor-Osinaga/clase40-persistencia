@@ -2,10 +2,12 @@ class User {
     #id
     #username
     #password
-    constructor({id, username, password}){
+    #admin
+    constructor({id, username, password, admin}){
         this.setId(id)
         this.setUsername(username)
         this.setPassword(password)
+        this.setAdmin(admin)
     }
 
     // getter y setter ID
@@ -26,6 +28,12 @@ class User {
         this.#password = password
     }
     getPassword(){return this.#password}
+
+    // GETER Y SETTER ADMIN
+    setAdmin(admin){
+        this.#admin = admin
+    }
+    getAdmin(){return this.#admin}
     
     // DTO
     convertToDTO(){
@@ -33,6 +41,7 @@ class User {
             id: this.#id,
             username: this.#username,
             password: this.#password,
+            admin: this.#admin,
         })
     }
 }

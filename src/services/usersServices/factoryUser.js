@@ -1,4 +1,4 @@
-import { usersDAO } from "../DAO/usersDAO.js";
+import { usersDAO } from "../../DAO/usersDAO.js";
 
 import { RepositoryUser } from "./repositoryUser.js";
 
