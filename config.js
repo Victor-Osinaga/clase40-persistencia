@@ -10,7 +10,7 @@ dotenv()
 
 // const mongoUrl = JSON.parse(await fs.promises.readFile(__dirname + '/mongodb.json', 'utf-8'))
 const mongoUrl = process.env.MONGO_URI
-
+// const PERS = process.env.PERS || "mongoAtlas"
 const config = {
     mongoUrl,
     sessionConfig: {
@@ -21,4 +21,7 @@ const config = {
     }
 }
 
-export default config
+export {
+    config,
+    // PERS
+}
