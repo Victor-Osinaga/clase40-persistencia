@@ -29,7 +29,7 @@ function failRegisterController(req,res){
 
 function successLoginController(req,res){
     // res.redirect('/api/v1/admin/home')
-    res.status(200).send({success: "Iniciando session"})
+    res.status(200).send({success: "Iniciando sesión..."})
 }
 
 function failLoginController(req,res){

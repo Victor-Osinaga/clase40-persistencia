@@ -35,14 +35,14 @@ class ServicesUser {
         try {
             if(userNoDto == null){
                 // throw new Error(`error autenticacion con: ${username}`)
-                throw {msg: `error autenticacion con:`, data: `${username}`}
+                throw {msg: `email no registrado:`, data: `${username}`}
             }
             if(await bcryptjs.compare(password, userNoDto.getPassword())){
                 const userDto = userNoDto.convertToDTO()
                 return userDto
             }else{
                 // throw new Error('error autenticacion con: password')
-                throw {msg: `error autenticacion con:`, data: `password`}
+                throw {msg: `contraseña incorrecta:`, data: `password`}
             }
         } catch (error) {
             // console.log(`inf err: ${error}`);
